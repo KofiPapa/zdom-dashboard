@@ -23,14 +23,14 @@ interface WidgetConfigFormProps {
 /*  Shared helpers                                                     */
 /* ------------------------------------------------------------------ */
 
-const labelClass = "block text-sm font-medium text-gray-300 mb-1";
+const labelClass = "block text-[10px] font-medium text-slate-500 mb-1";
 const inputClass =
-  "w-full rounded-md bg-gray-800 border border-gray-600 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none";
+  "w-full rounded-md bg-white border border-slate-200 px-2 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none";
 const checkboxWrapperClass = "flex items-center gap-2";
 const checkboxClass =
-  "h-4 w-4 rounded border-gray-600 bg-gray-800 text-blue-500 focus:ring-blue-500";
-const sectionClass = "space-y-4";
-const headerClass = "flex items-center gap-2 text-base font-semibold text-white mb-4";
+  "h-3.5 w-3.5 rounded border-slate-300 bg-white text-blue-500 focus:ring-blue-500";
+const sectionClass = "space-y-3";
+const headerClass = "flex items-center gap-1.5 text-xs font-semibold text-slate-700 mb-3";
 
 function Field({
   label,
@@ -79,7 +79,7 @@ function ClockConfig({
           checked={(config.format24h as boolean) ?? false}
           onChange={(e) => onChange({ ...config, format24h: e.target.checked })}
         />
-        <span className="text-sm text-gray-300">24-hour format</span>
+        <span className="text-xs text-slate-600">24-hour format</span>
       </div>
       <div className={checkboxWrapperClass}>
         <input
@@ -90,7 +90,7 @@ function ClockConfig({
             onChange({ ...config, showSeconds: e.target.checked })
           }
         />
-        <span className="text-sm text-gray-300">Show seconds</span>
+        <span className="text-xs text-slate-600">Show seconds</span>
       </div>
       <div className={checkboxWrapperClass}>
         <input
@@ -99,7 +99,7 @@ function ClockConfig({
           checked={(config.showDate as boolean) ?? true}
           onChange={(e) => onChange({ ...config, showDate: e.target.checked })}
         />
-        <span className="text-sm text-gray-300">Show date</span>
+        <span className="text-xs text-slate-600">Show date</span>
       </div>
     </div>
   );
@@ -145,7 +145,7 @@ function WeatherConfig({
             onChange({ ...config, showForecast: e.target.checked })
           }
         />
-        <span className="text-sm text-gray-300">Show forecast</span>
+        <span className="text-xs text-slate-600">Show forecast</span>
       </div>
     </div>
   );
@@ -182,7 +182,7 @@ function TickerConfig({
             onChange({ ...config, speed: Number(e.target.value) })
           }
         />
-        <div className="text-xs text-gray-500 mt-1">
+        <div className="text-[10px] text-slate-400 mt-1">
           Speed: {(config.speed as number) ?? 50}
         </div>
       </Field>
@@ -260,7 +260,7 @@ function RssConfig({
             onChange({ ...config, showImages: e.target.checked })
           }
         />
-        <span className="text-sm text-gray-300">Show images</span>
+        <span className="text-xs text-slate-600">Show images</span>
       </div>
     </div>
   );
@@ -294,7 +294,7 @@ function YoutubeConfig({
           checked={(config.autoplay as boolean) ?? true}
           onChange={(e) => onChange({ ...config, autoplay: e.target.checked })}
         />
-        <span className="text-sm text-gray-300">Autoplay</span>
+        <span className="text-xs text-slate-600">Autoplay</span>
       </div>
       <div className={checkboxWrapperClass}>
         <input
@@ -303,7 +303,7 @@ function YoutubeConfig({
           checked={(config.mute as boolean) ?? true}
           onChange={(e) => onChange({ ...config, mute: e.target.checked })}
         />
-        <span className="text-sm text-gray-300">Mute</span>
+        <span className="text-xs text-slate-600">Mute</span>
       </div>
       <div className={checkboxWrapperClass}>
         <input
@@ -312,7 +312,7 @@ function YoutubeConfig({
           checked={(config.loop as boolean) ?? true}
           onChange={(e) => onChange({ ...config, loop: e.target.checked })}
         />
-        <span className="text-sm text-gray-300">Loop</span>
+        <span className="text-xs text-slate-600">Loop</span>
       </div>
     </div>
   );
@@ -350,7 +350,7 @@ function WebpageConfig({
             onChange({ ...config, refreshMinutes: Number(e.target.value) })
           }
         />
-        <div className="text-xs text-gray-500 mt-1">
+        <div className="text-[10px] text-slate-400 mt-1">
           Set to 0 to disable auto-refresh
         </div>
       </Field>
@@ -363,7 +363,7 @@ function WebpageConfig({
             onChange({ ...config, scrollEnabled: e.target.checked })
           }
         />
-        <span className="text-sm text-gray-300">Enable scrolling</span>
+        <span className="text-xs text-slate-600">Enable scrolling</span>
       </div>
     </div>
   );
@@ -470,7 +470,7 @@ function CountdownConfig({
           checked={(config.showDays as boolean) ?? true}
           onChange={(e) => onChange({ ...config, showDays: e.target.checked })}
         />
-        <span className="text-sm text-gray-300">Show days</span>
+        <span className="text-xs text-slate-600">Show days</span>
       </div>
       <div className={checkboxWrapperClass}>
         <input
@@ -479,7 +479,7 @@ function CountdownConfig({
           checked={(config.showHours as boolean) ?? true}
           onChange={(e) => onChange({ ...config, showHours: e.target.checked })}
         />
-        <span className="text-sm text-gray-300">Show hours</span>
+        <span className="text-xs text-slate-600">Show hours</span>
       </div>
     </div>
   );
@@ -517,7 +517,7 @@ function GoogleSlidesConfig({
             onChange({ ...config, autoAdvance: e.target.checked })
           }
         />
-        <span className="text-sm text-gray-300">Auto-advance slides</span>
+        <span className="text-xs text-slate-600">Auto-advance slides</span>
       </div>
       <Field label="Interval (seconds)">
         <input
@@ -623,7 +623,7 @@ export function WidgetConfigForm({
 
   if (!FormComponent) {
     return (
-      <div className="text-sm text-gray-400">
+      <div className="text-xs text-slate-400">
         No configuration available for widget type: {widgetType}
       </div>
     );

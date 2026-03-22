@@ -5,6 +5,7 @@ import {
   HiOutlineArrowDown,
 } from "react-icons/hi";
 import type { Zone, TextStyle } from "@shared/types/firestore-schema";
+import { WidgetConfigForm } from "./widgets/WidgetConfigForms";
 
 interface RightPanelProps {
   zone: Zone | null;
@@ -225,11 +226,13 @@ export default function RightPanel({ zone, onUpdate, onRemove, onDuplicate, onRe
         )}
 
         {/* Widget properties */}
-        {zone.type === "widget" && (
-          <div>
-            <h4 className="text-xs font-medium text-slate-500 uppercase mb-2">Widget</h4>
-            <p className="text-xs text-slate-600 capitalize">{zone.content.widgetType || "Unknown"}</p>
-            <p className="text-[10px] text-slate-400 mt-1">Widget configuration available in player view</p>
+        {zone.type === "widget" && zone.content.widgetType && (
+          <div className="widget-config-light">
+            <WidgetConfigForm
+              widgetType={zone.content.widgetType}
+              config={zone.content.widgetConfig || {}}
+              onChange={(newConfig) => updateContent({ widgetConfig: newConfig })}
+            />
           </div>
         )}
       </div>
