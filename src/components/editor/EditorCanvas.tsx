@@ -198,6 +198,7 @@ export default function EditorCanvas({
                 opacity: zone.opacity ?? 1,
                 zIndex: zone.zIndex,
               }}
+              onClick={(e) => e.stopPropagation()}
               onMouseDown={(e) => handleMouseDown(e, zone.id)}
             >
               {/* Zone content preview */}
