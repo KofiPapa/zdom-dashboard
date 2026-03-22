@@ -23,7 +23,8 @@ export function uploadFile(
 ): { promise: Promise<UploadResult>; cancel: () => void } {
   const storagePath = `organizations/${orgId}/media/${mediaId}_${file.name}`;
   const storageRef = ref(storage, storagePath);
-  const uploadTask = uploadBytesResumable(storageRef, file);
+  const metadata = { contentType: file.type };
+  const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
   let cancelled = false;
 
