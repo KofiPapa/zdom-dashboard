@@ -55,12 +55,12 @@ export function useBilling() {
     fetchSubscription();
   }, [fetchSubscription]);
 
-  const openCheckout = useCallback(async (priceId: string, quantity = 1) => {
+  const openCheckout = useCallback(async (plan: string, quantity = 1, interval: "monthly" | "annual" = "monthly") => {
     const createSession = httpsCallable<
-      { priceId: string; quantity: number },
+      { plan: string; quantity: number; interval: string },
       { url: string }
     >(functions, "createCheckoutSession");
-    const result = await createSession({ priceId, quantity });
+    const result = await createSession({ plan, quantity, interval });
     if (result.data.url) {
       window.location.href = result.data.url;
     }

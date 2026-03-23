@@ -64,13 +64,6 @@ const PLANS = [
   },
 ];
 
-const PRICE_IDS: Record<string, string> = {
-  starter_monthly: import.meta.env.VITE_STRIPE_STARTER_MONTHLY_PRICE_ID || "",
-  starter_annual: import.meta.env.VITE_STRIPE_STARTER_ANNUAL_PRICE_ID || "",
-  pro_monthly: import.meta.env.VITE_STRIPE_PRO_MONTHLY_PRICE_ID || "",
-  pro_annual: import.meta.env.VITE_STRIPE_PRO_ANNUAL_PRICE_ID || "",
-};
-
 export function PlanModal({ onClose }: PlanModalProps) {
   const { subscription, openCheckout } = useBilling();
   const [interval, setInterval] = useState<"monthly" | "annual">("monthly");
@@ -82,17 +75,9 @@ export function PlanModal({ onClose }: PlanModalProps) {
   const handleSelectPlan = async (planId: string) => {
     if (planId === "free" || planId === "enterprise") return;
 
-    const priceKey = `${planId}_${interval}`;
-    const priceId = PRICE_IDS[priceKey];
-
-    if (!priceId) {
-      toast.error("Price configuration not found. Please contact support.");
-      return;
-    }
-
     setCheckoutLoading(planId);
     try {
-      await openCheckout(priceId, quantity);
+      await openCheckout(planId, quantity, interval);
     } catch {
       toast.error("Failed to start checkout");
     } finally {
@@ -196,7 +181,7 @@ export function PlanModal({ onClose }: PlanModalProps) {
                         ${price * quantity}
                       </span>
                       <span className="text-sm text-slate-500">
-                        /{interval === "annual" ? "mo" : "mo"}
+                        /mo
                       </span>
                       {quantity > 1 && (
                         <p className="text-xs text-slate-400 mt-1">
