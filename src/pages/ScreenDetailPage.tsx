@@ -130,7 +130,7 @@ function EditScreenModal({
               type="text"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               required
             />
           </div>
@@ -143,7 +143,7 @@ function EditScreenModal({
               type="text"
               value={form.location}
               onChange={(e) => setForm({ ...form, location: e.target.value })}
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
             />
           </div>
 
@@ -159,7 +159,7 @@ function EditScreenModal({
                   orientation: e.target.value as Orientation,
                 })
               }
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white"
             >
               {ORIENTATION_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -178,7 +178,7 @@ function EditScreenModal({
               value={form.tags}
               onChange={(e) => setForm({ ...form, tags: e.target.value })}
               placeholder="lobby, entrance, floor-1"
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
             />
             <p className="text-xs text-slate-400 mt-1">
               Separate multiple tags with commas
@@ -196,7 +196,7 @@ function EditScreenModal({
             <button
               type="submit"
               disabled={saving || !form.name.trim()}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center gap-2"
+              className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark disabled:opacity-50 flex items-center gap-2"
             >
               {saving ? (
                 <>
@@ -426,7 +426,7 @@ export default function ScreenDetailPage() {
                 value={screen.currentPlaylistId || ""}
                 onChange={(e) => handleAssignPlaylist(e.target.value)}
                 disabled={assigningPlaylist}
-                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50"
+                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary disabled:opacity-50"
               >
                 <option value="">No playlist assigned</option>
                 {playlists.map((p) => (
@@ -436,7 +436,7 @@ export default function ScreenDetailPage() {
                 ))}
               </select>
               {assigningPlaylist && (
-                <div className="w-5 h-5 border-2 border-slate-300 border-t-blue-600 rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-slate-300 border-t-primary rounded-full animate-spin" />
               )}
             </div>
             {screen.currentPlaylistId && (

@@ -42,7 +42,7 @@ export default function PlaylistsPage() {
         action={
           <Link
             to="/playlists/editor"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
           >
             <HiOutlinePlus className="w-4 h-4" />
             Create Playlist
@@ -59,7 +59,7 @@ export default function PlaylistsPage() {
             action={
               <Link
                 to="/playlists/editor"
-                className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
               >
                 Create Playlist
               </Link>
@@ -85,7 +85,7 @@ export default function PlaylistsPage() {
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
                   <Link
                     to={`/playlists/editor/${playlist.id}`}
-                    className="p-2 bg-white rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-600"
+                    className="p-2 bg-white rounded-lg text-slate-700 hover:bg-orange-50 hover:text-primary"
                   >
                     <HiOutlinePencil className="w-4 h-4" />
                   </Link>

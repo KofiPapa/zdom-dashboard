@@ -297,7 +297,7 @@ export default function AnalyticsPage() {
               onClick={() => setPreset(p)}
               className={`px-3 py-1.5 text-sm rounded-md font-medium transition-colors ${
                 preset === p
-                  ? "bg-blue-600 text-white"
+                  ? "bg-primary text-white"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200"
               }`}
             >
@@ -331,7 +331,7 @@ export default function AnalyticsPage() {
             onClick={() => setActiveTab("overview")}
             className={`pb-3 text-sm font-medium border-b-2 transition-colors ${
               activeTab === "overview"
-                ? "border-blue-600 text-blue-600"
+                ? "border-primary text-primary"
                 : "border-transparent text-slate-500 hover:text-slate-700"
             }`}
           >
@@ -341,7 +341,7 @@ export default function AnalyticsPage() {
             onClick={() => setActiveTab("proof")}
             className={`pb-3 text-sm font-medium border-b-2 transition-colors ${
               activeTab === "proof"
-                ? "border-blue-600 text-blue-600"
+                ? "border-primary text-primary"
                 : "border-transparent text-slate-500 hover:text-slate-700"
             }`}
           >
@@ -357,7 +357,7 @@ export default function AnalyticsPage() {
           {/* Overview Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <StatCard
-              icon={<HiOutlinePlay className="w-6 h-6 text-blue-600" />}
+              icon={<HiOutlinePlay className="w-6 h-6 text-primary" />}
               label="Total Plays"
               value={totalPlays.toLocaleString()}
             />
@@ -529,7 +529,7 @@ export default function AnalyticsPage() {
                 <button
                   onClick={handleExportCSV}
                   disabled={filteredProofLogs.length === 0}
-                  className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <HiOutlineDownload className="w-4 h-4" />
                   Export CSV

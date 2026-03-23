@@ -20,7 +20,7 @@ const typeIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 const typeColors: Record<string, string> = {
-  media: "text-blue-500",
+  media: "text-primary",
   text: "text-emerald-500",
   widget: "text-purple-500",
 };
@@ -47,7 +47,7 @@ export default function LayerPanel({ zones, selectedZoneId, onSelectZone, onRemo
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onSelectZone(zone.id); }}
                 className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg min-w-[80px] transition-colors cursor-pointer ${
-                  isSelected ? "bg-blue-50 ring-1 ring-blue-300" : "bg-slate-50 hover:bg-slate-100"
+                  isSelected ? "bg-orange-50 ring-1 ring-primary" : "bg-slate-50 hover:bg-slate-100"
                 }`}
               >
                 <Icon className={`w-5 h-5 ${typeColors[zone.type]}`} />

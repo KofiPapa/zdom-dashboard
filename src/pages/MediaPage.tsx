@@ -287,7 +287,7 @@ export default function MediaPage() {
         action={
           <button
             onClick={() => setShowUploadPanel(!showUploadPanel)}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
           >
             <HiOutlineUpload className="w-4 h-4" />
             Upload
@@ -316,14 +316,14 @@ export default function MediaPage() {
             {...getRootProps()}
             className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${
               isDragActive
-                ? "border-blue-400 bg-blue-50"
+                ? "border-primary bg-orange-50"
                 : "border-slate-300 hover:border-slate-400"
             }`}
           >
             <input {...getInputProps()} />
             <HiOutlineCloudUpload className="w-10 h-10 text-slate-400 mx-auto mb-3" />
             {isDragActive ? (
-              <p className="text-blue-600 font-medium">Drop files here...</p>
+              <p className="text-primary font-medium">Drop files here...</p>
             ) : (
               <>
                 <p className="text-slate-600 font-medium">
@@ -347,7 +347,7 @@ export default function MediaPage() {
                 {uploads.some((u) => u.status === "done" || u.status === "error") && (
                   <button
                     onClick={clearCompleted}
-                    className="text-xs text-blue-600 hover:text-blue-700"
+                    className="text-xs text-primary hover:text-primary-dark"
                   >
                     Clear completed
                   </button>
@@ -370,7 +370,7 @@ export default function MediaPage() {
                               ? "bg-red-500"
                               : upload.status === "done"
                                 ? "bg-green-500"
-                                : "bg-blue-500"
+                                : "bg-orange-500"
                           }`}
                           style={{ width: `${upload.progress}%` }}
                         />
@@ -400,7 +400,7 @@ export default function MediaPage() {
                       </button>
                     )}
                     {upload.status === "processing" && (
-                      <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+                      <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                     )}
                   </div>
                 </div>
@@ -421,7 +421,7 @@ export default function MediaPage() {
               placeholder="Search media..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-9 pr-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
           </div>
 
@@ -430,7 +430,7 @@ export default function MediaPage() {
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value as FilterOption)}
-              className="appearance-none pl-8 pr-8 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+              className="appearance-none pl-8 pr-8 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
             >
               <option value="all">All Types</option>
               <option value="images">Images</option>
@@ -445,7 +445,7 @@ export default function MediaPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="appearance-none pl-8 pr-8 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+              className="appearance-none pl-8 pr-8 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
             >
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
@@ -464,7 +464,7 @@ export default function MediaPage() {
                 onClick={() => setGridSize(size)}
                 className={`p-2 text-sm transition-colors ${
                   gridSize === size
-                    ? "bg-blue-600 text-white"
+                    ? "bg-primary text-white"
                     : "bg-white text-slate-500 hover:bg-slate-50"
                 }`}
                 title={`${size.charAt(0).toUpperCase() + size.slice(1)} grid`}
@@ -483,8 +483,8 @@ export default function MediaPage() {
 
       {/* Bulk Actions Bar */}
       {selectedIds.size > 0 && (
-        <div className="flex items-center gap-4 mb-4 px-4 py-3 bg-blue-50 border border-blue-200 rounded-lg">
-          <span className="text-sm font-medium text-blue-700">
+        <div className="flex items-center gap-4 mb-4 px-4 py-3 bg-orange-50 border border-orange-200 rounded-lg">
+          <span className="text-sm font-medium text-primary-dark">
             {selectedIds.size} selected
           </span>
           <button
@@ -496,7 +496,7 @@ export default function MediaPage() {
           </button>
           <button
             onClick={clearSelection}
-            className="text-sm text-blue-600 hover:text-blue-700 ml-auto"
+            className="text-sm text-primary hover:text-primary-dark ml-auto"
           >
             Clear selection
           </button>
@@ -514,7 +514,7 @@ export default function MediaPage() {
               action={
                 <button
                   onClick={() => setShowUploadPanel(true)}
-                  className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                  className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
                 >
                   Upload Media
                 </button>
@@ -647,7 +647,7 @@ function MediaCard({
     <div
       className={`group relative bg-white rounded-lg border overflow-hidden transition-all ${
         isSelected
-          ? "border-blue-500 ring-2 ring-blue-200"
+          ? "border-primary ring-2 ring-orange-200"
           : "border-slate-200 hover:border-slate-300 hover:shadow-md"
       }`}
     >
@@ -701,7 +701,7 @@ function MediaCard({
           onClick={onToggleSelect}
           className={`absolute top-2 left-2 w-6 h-6 rounded border-2 flex items-center justify-center transition-all ${
             isSelected
-              ? "bg-blue-600 border-blue-600 text-white"
+              ? "bg-primary border-primary text-white"
               : "bg-white/80 border-slate-300 text-transparent group-hover:opacity-100 opacity-0"
           }`}
         >
@@ -722,7 +722,7 @@ function MediaCard({
               e.stopPropagation();
               onPreview();
             }}
-            className="p-2 bg-white rounded-full shadow-lg text-slate-700 hover:text-blue-600 transition-colors"
+            className="p-2 bg-white rounded-full shadow-lg text-slate-700 hover:text-primary transition-colors"
             title="Preview"
           >
             <HiOutlineEye className="w-5 h-5" />
@@ -875,7 +875,7 @@ function MediaPreviewModal({
                       if (e.key === "Enter") onSaveName();
                       if (e.key === "Escape") onCancelEditName();
                     }}
-                    className="flex-1 px-2 py-1 text-sm border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-2 py-1 text-sm border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <button
                     onClick={onSaveName}
@@ -897,7 +897,7 @@ function MediaPreviewModal({
                   </p>
                   <button
                     onClick={onStartEditName}
-                    className="p-1 text-slate-300 hover:text-blue-600 opacity-0 group-hover/name:opacity-100 transition-opacity"
+                    className="p-1 text-slate-300 hover:text-primary opacity-0 group-hover/name:opacity-100 transition-opacity"
                   >
                     <HiOutlinePencil className="w-3.5 h-3.5" />
                   </button>
@@ -951,7 +951,7 @@ function MediaPreviewModal({
                 </label>
                 <button
                   onClick={onToggleEditTags}
-                  className="text-xs text-blue-600 hover:text-blue-700"
+                  className="text-xs text-primary hover:text-primary-dark"
                 >
                   {editingTags ? "Done" : "Edit"}
                 </button>
@@ -991,11 +991,11 @@ function MediaPreviewModal({
                       }
                     }}
                     placeholder="Add tag..."
-                    className="flex-1 px-2 py-1 text-xs border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-2 py-1 text-xs border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <button
                     onClick={onAddTag}
-                    className="px-2 py-1 text-xs font-medium text-blue-600 bg-blue-50 rounded hover:bg-blue-100"
+                    className="px-2 py-1 text-xs font-medium text-primary bg-orange-50 rounded hover:bg-orange-100"
                   >
                     Add
                   </button>

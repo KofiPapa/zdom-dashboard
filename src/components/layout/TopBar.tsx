@@ -29,7 +29,7 @@ export default function TopBar() {
           <input
             type="text"
             placeholder="Search..."
-            className="pl-9 pr-4 py-2 w-64 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="pl-9 pr-4 py-2 w-64 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           />
         </div>
 
@@ -41,7 +41,7 @@ export default function TopBar() {
         {/* User dropdown */}
         <div className="relative group">
           <button className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-medium">
+            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-medium">
               {profile?.displayName?.charAt(0)?.toUpperCase() || "U"}
             </div>
           </button>

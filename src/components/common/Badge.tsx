@@ -3,7 +3,7 @@ const variants = {
   offline: "bg-slate-100 text-slate-600",
   error: "bg-red-100 text-red-700",
   warning: "bg-amber-100 text-amber-700",
-  info: "bg-blue-100 text-blue-700",
+  info: "bg-orange-100 text-primary-dark",
 };
 
 interface BadgeProps {
@@ -28,7 +28,7 @@ export default function Badge({ variant, children, dot }: BadgeProps) {
                   ? "bg-red-500"
                   : variant === "warning"
                     ? "bg-amber-500"
-                    : "bg-blue-500"
+                    : "bg-orange-500"
           }`}
         />
       )}

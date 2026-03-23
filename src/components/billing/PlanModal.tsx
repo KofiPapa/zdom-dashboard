@@ -115,7 +115,7 @@ export function PlanModal({ onClose }: PlanModalProps) {
           <button
             onClick={() => setInterval(interval === "monthly" ? "annual" : "monthly")}
             className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-              interval === "annual" ? "bg-blue-600" : "bg-slate-300"
+              interval === "annual" ? "bg-primary" : "bg-slate-300"
             }`}
           >
             <span
@@ -141,7 +141,7 @@ export function PlanModal({ onClose }: PlanModalProps) {
             max={100}
             value={quantity}
             onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-            className="w-20 px-3 py-1.5 border border-slate-300 rounded-lg text-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-20 px-3 py-1.5 border border-slate-300 rounded-lg text-sm text-center focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -158,7 +158,7 @@ export function PlanModal({ onClose }: PlanModalProps) {
                 key={plan.id}
                 className={`relative rounded-lg border-2 p-5 flex flex-col ${
                   isPopular
-                    ? "border-blue-500 shadow-md"
+                    ? "border-primary shadow-md"
                     : isCurrent
                       ? "border-green-500"
                       : "border-slate-200"
@@ -166,7 +166,7 @@ export function PlanModal({ onClose }: PlanModalProps) {
               >
                 {isPopular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+                    <span className="bg-primary text-white text-xs font-medium px-3 py-1 rounded-full">
                       Most Popular
                     </span>
                   </div>
@@ -212,7 +212,7 @@ export function PlanModal({ onClose }: PlanModalProps) {
                 {plan.id === "enterprise" ? (
                   <a
                     href="mailto:sales@example.com"
-                    className="w-full py-2 text-sm font-medium text-center text-blue-600 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100"
+                    className="w-full py-2 text-sm font-medium text-center text-primary bg-orange-50 border border-orange-200 rounded-lg hover:bg-orange-100"
                   >
                     Contact Sales
                   </a>
@@ -230,7 +230,7 @@ export function PlanModal({ onClose }: PlanModalProps) {
                     className={`w-full py-2 text-sm font-medium rounded-lg disabled:opacity-50 ${
                       plan.id === "free"
                         ? "text-slate-500 bg-slate-100 border border-slate-200 cursor-default"
-                        : "text-white bg-blue-600 hover:bg-blue-700"
+                        : "text-white bg-primary hover:bg-primary-dark"
                     }`}
                   >
                     {checkoutLoading === plan.id

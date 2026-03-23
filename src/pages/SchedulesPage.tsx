@@ -46,7 +46,7 @@ export default function SchedulesPage() {
         action={
           <Link
             to="/schedules/editor"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
           >
             <HiOutlinePlus className="w-4 h-4" />
             Create Schedule
@@ -63,7 +63,7 @@ export default function SchedulesPage() {
             action={
               <Link
                 to="/schedules/editor"
-                className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
               >
                 Create Schedule
               </Link>
@@ -97,7 +97,7 @@ export default function SchedulesPage() {
               <div className="flex items-center gap-2">
                 <Link
                   to={`/schedules/editor/${schedule.id}`}
-                  className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
+                  className="p-2 text-slate-400 hover:text-primary hover:bg-orange-50 rounded-lg"
                 >
                   <HiOutlinePencil className="w-4 h-4" />
                 </Link>

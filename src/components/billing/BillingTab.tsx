@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const STATUS_BADGES: Record<string, { label: string; className: string }> = {
   active: { label: "Active", className: "bg-green-100 text-green-700" },
-  trialing: { label: "Trial", className: "bg-blue-100 text-blue-700" },
+  trialing: { label: "Trial", className: "bg-orange-100 text-primary-dark" },
   past_due: { label: "Past Due", className: "bg-red-100 text-red-700" },
   canceled: { label: "Canceled", className: "bg-slate-100 text-slate-600" },
   expired: { label: "Expired", className: "bg-slate-100 text-slate-600" },
@@ -36,7 +36,7 @@ export default function BillingTab() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+        <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -108,7 +108,7 @@ export default function BillingTab() {
                     ? "bg-red-500"
                     : screensPercent > 70
                       ? "bg-yellow-500"
-                      : "bg-blue-500"
+                      : "bg-orange-500"
                 }`}
                 style={{ width: `${screensPercent}%` }}
               />
@@ -132,7 +132,7 @@ export default function BillingTab() {
       <div className="flex gap-3">
         <button
           onClick={() => setShowPlanModal(true)}
-          className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+          className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark"
         >
           Change Plan
         </button>

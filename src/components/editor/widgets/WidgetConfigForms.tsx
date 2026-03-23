@@ -25,10 +25,10 @@ interface WidgetConfigFormProps {
 
 const labelClass = "block text-[10px] font-medium text-slate-500 mb-1";
 const inputClass =
-  "w-full rounded-md bg-white border border-slate-200 px-2 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none";
+  "w-full rounded-md bg-white border border-slate-200 px-2 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none";
 const checkboxWrapperClass = "flex items-center gap-2";
 const checkboxClass =
-  "h-3.5 w-3.5 rounded border-slate-300 bg-white text-blue-500 focus:ring-blue-500";
+  "h-3.5 w-3.5 rounded border-slate-300 bg-white text-primary focus:ring-primary";
 const sectionClass = "space-y-3";
 const headerClass = "flex items-center gap-1.5 text-xs font-semibold text-slate-700 mb-3";
 

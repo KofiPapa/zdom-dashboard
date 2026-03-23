@@ -20,7 +20,7 @@ export default function DashboardHome() {
   const onlineCount = screens.filter((s) => s.status === "online").length;
 
   const stats = [
-    { label: "Total Screens", value: screens.length, icon: HiOutlineDesktopComputer, color: "text-blue-600 bg-blue-50" },
+    { label: "Total Screens", value: screens.length, icon: HiOutlineDesktopComputer, color: "text-primary bg-orange-50" },
     { label: "Online Screens", value: onlineCount, icon: HiOutlineStatusOnline, color: "text-green-600 bg-green-50" },
     { label: "Media Items", value: media.length, icon: HiOutlinePhotograph, color: "text-purple-600 bg-purple-50" },
     { label: "Playlists", value: playlists.length, icon: HiOutlineCollection, color: "text-amber-600 bg-amber-50" },
@@ -59,8 +59,8 @@ export default function DashboardHome() {
               to="/screens"
               className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              <div className="p-2 bg-blue-50 rounded-lg">
-                <HiOutlinePlus className="w-4 h-4 text-blue-600" />
+              <div className="p-2 bg-orange-50 rounded-lg">
+                <HiOutlinePlus className="w-4 h-4 text-primary" />
               </div>
               <span className="text-sm font-medium text-slate-700">Add Screen</span>
             </Link>
@@ -91,7 +91,7 @@ export default function DashboardHome() {
           <div className="space-y-3">
             {recentActivity.map((item, i) => (
               <div key={i} className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-blue-400 mt-1.5 shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0" />
                 <div>
                   <p className="text-sm text-slate-600">{item.message}</p>
                   <p className="text-xs text-slate-400 mt-0.5">{item.time}</p>

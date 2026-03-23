@@ -53,7 +53,7 @@ export default function EditorToolbar({
         type="text"
         value={name}
         onChange={(e) => onNameChange(e.target.value)}
-        className="text-sm font-semibold text-slate-900 bg-transparent border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-2 py-1 max-w-xs"
+        className="text-sm font-semibold text-slate-900 bg-transparent border-0 focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1 max-w-xs"
       />
 
       {isDirty && <span className="w-2 h-2 rounded-full bg-amber-400" title="Unsaved changes" />}
@@ -108,7 +108,7 @@ export default function EditorToolbar({
       <button
         onClick={onSave}
         disabled={saving}
-        className="flex items-center gap-1.5 px-4 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50"
+        className="flex items-center gap-1.5 px-4 py-1.5 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark disabled:opacity-50"
       >
         <HiOutlineSave className="w-4 h-4" />
         {saving ? "Saving..." : "Save"}

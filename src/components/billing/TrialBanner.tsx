@@ -31,9 +31,9 @@ export default function TrialBanner() {
   let borderColor: string;
 
   if (daysRemaining > 7) {
-    bgColor = "bg-blue-50";
-    textColor = "text-blue-800";
-    borderColor = "border-blue-200";
+    bgColor = "bg-orange-50";
+    textColor = "text-orange-800";
+    borderColor = "border-orange-200";
   } else if (daysRemaining > 3) {
     bgColor = "bg-yellow-50";
     textColor = "text-yellow-800";

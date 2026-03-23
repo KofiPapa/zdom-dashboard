@@ -85,7 +85,7 @@ function ScreenCard({
   return (
     <Link
       to={`/screens/${screen.id}`}
-      className="block bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
+      className="block bg-white rounded-lg border border-slate-200 hover:border-primary/30 hover:shadow-md transition-all group"
     >
       {/* Card Header - Status Bar */}
       <div
@@ -96,7 +96,7 @@ function ScreenCard({
         {/* Title & Status */}
         <div className="flex items-start justify-between mb-3">
           <div className="min-w-0 flex-1">
-            <h3 className="text-sm font-semibold text-slate-900 truncate group-hover:text-blue-600 transition-colors">
+            <h3 className="text-sm font-semibold text-slate-900 truncate group-hover:text-primary transition-colors">
               {screen.name}
             </h3>
             {screen.location && (
@@ -179,10 +179,10 @@ function ScreenRow({
     >
       {/* Status Dot + Icon */}
       <div className="relative flex-shrink-0">
-        <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+        <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-orange-50 transition-colors">
           <OrientationIcon
             orientation={screen.orientation}
-            className="w-5 h-5 text-slate-500 group-hover:text-blue-600"
+            className="w-5 h-5 text-slate-500 group-hover:text-primary"
           />
         </div>
         <div
@@ -194,7 +194,7 @@ function ScreenRow({
 
       {/* Name & Location */}
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-medium text-slate-900 truncate group-hover:text-blue-600 transition-colors">
+        <p className="text-sm font-medium text-slate-900 truncate group-hover:text-primary transition-colors">
           {screen.name}
         </p>
         {screen.location && (
@@ -308,7 +308,7 @@ function AddScreenModal({
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               placeholder="e.g. Lobby Display"
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               required
               autoFocus
             />
@@ -324,7 +324,7 @@ function AddScreenModal({
               value={form.location}
               onChange={(e) => setForm({ ...form, location: e.target.value })}
               placeholder="e.g. Building A, Floor 1"
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
             />
           </div>
 
@@ -342,7 +342,7 @@ function AddScreenModal({
                     orientation: e.target.value as Orientation,
                   })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white"
               >
                 {ORIENTATION_OPTIONS.map((opt) => (
                   <option key={opt.value} value={opt.value}>
@@ -360,7 +360,7 @@ function AddScreenModal({
                 onChange={(e) =>
                   setForm({ ...form, resolutionKey: e.target.value })
                 }
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white"
               >
                 {RESOLUTION_OPTIONS.map((opt) => (
                   <option key={opt.key} value={opt.key}>
@@ -381,7 +381,7 @@ function AddScreenModal({
               value={form.tags}
               onChange={(e) => setForm({ ...form, tags: e.target.value })}
               placeholder="lobby, entrance, floor-1 (comma separated)"
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
             />
             <p className="text-xs text-slate-400 mt-1">
               Separate multiple tags with commas
@@ -400,7 +400,7 @@ function AddScreenModal({
             <button
               type="submit"
               disabled={submitting || !form.name.trim()}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {submitting ? (
                 <>
@@ -497,7 +497,7 @@ function PairingModal({
               </div>
               <button
                 onClick={onClose}
-                className="px-6 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+                className="px-6 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark"
               >
                 Done
               </button>
@@ -514,7 +514,7 @@ function PairingModal({
               <p className="text-sm text-red-600">{error}</p>
               <button
                 onClick={generateCode}
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+                className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark"
               >
                 Try Again
               </button>
@@ -548,7 +548,7 @@ function PairingModal({
                   <p className="text-sm text-red-500">Code has expired</p>
                   <button
                     onClick={generateCode}
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100"
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary bg-orange-50 rounded-lg hover:bg-orange-100"
                   >
                     <HiOutlineRefresh className="w-4 h-4" />
                     Generate New Code
@@ -641,7 +641,7 @@ export default function ScreensPage() {
         action={
           <button
             onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
           >
             <HiOutlinePlus className="w-4 h-4" />
             Add Screen
@@ -658,7 +658,7 @@ export default function ScreensPage() {
             action={
               <button
                 onClick={() => setShowAddModal(true)}
-                className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
               >
                 Add Screen
               </button>
@@ -677,7 +677,7 @@ export default function ScreensPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search screens..."
-                className="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
 
@@ -693,7 +693,7 @@ export default function ScreensPage() {
                 onChange={(e) =>
                   setStatusFilter(e.target.value as StatusFilter)
                 }
-                className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="all">All Status ({screens.length})</option>
                 <option value="online">Online ({onlineCount})</option>
@@ -704,7 +704,7 @@ export default function ScreensPage() {
               <select
                 value={orientationFilter}
                 onChange={(e) => setOrientationFilter(e.target.value)}
-                className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="all">All Orientations</option>
                 {ORIENTATION_OPTIONS.map((opt) => (
@@ -761,7 +761,7 @@ export default function ScreensPage() {
                   setStatusFilter("all");
                   setOrientationFilter("all");
                 }}
-                className="mt-2 text-sm text-blue-600 hover:text-blue-700 font-medium"
+                className="mt-2 text-sm text-primary hover:text-primary-dark font-medium"
               >
                 Clear filters
               </button>

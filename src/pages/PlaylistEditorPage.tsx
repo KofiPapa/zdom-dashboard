@@ -247,7 +247,7 @@ export default function PlaylistEditorPage() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark disabled:opacity-50"
             >
               <HiOutlineSave className="w-4 h-4" />
               {saving ? "Saving..." : "Save"}
@@ -271,7 +271,7 @@ export default function PlaylistEditorPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter playlist name"
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
               </div>
               <div>
@@ -281,7 +281,7 @@ export default function PlaylistEditorPage() {
                 <select
                   value={orientation}
                   onChange={(e) => setOrientation(e.target.value as Orientation)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 >
                   <option value="landscape">Landscape</option>
                   <option value="portrait">Portrait</option>
@@ -451,7 +451,7 @@ export default function PlaylistEditorPage() {
                     <button
                       key={m.id}
                       onClick={() => addMediaItem(m)}
-                      className="text-left bg-slate-50 rounded-lg overflow-hidden hover:ring-2 hover:ring-blue-500 transition-all group"
+                      className="text-left bg-slate-50 rounded-lg overflow-hidden hover:ring-2 hover:ring-primary transition-all group"
                     >
                       <div className="aspect-video bg-slate-200 relative">
                         {m.thumbnailUrl || m.downloadUrl ? (
@@ -465,7 +465,7 @@ export default function PlaylistEditorPage() {
                             <HiOutlinePhotograph className="w-5 h-5 text-slate-400" />
                           </div>
                         )}
-                        <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors flex items-center justify-center">
+                        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors flex items-center justify-center">
                           <HiOutlinePlus className="w-5 h-5 text-white opacity-0 group-hover:opacity-100" />
                         </div>
                       </div>
@@ -484,7 +484,7 @@ export default function PlaylistEditorPage() {
                   <button
                     key={t.id}
                     onClick={() => addTemplateItem(t)}
-                    className="text-left bg-slate-50 rounded-lg overflow-hidden hover:ring-2 hover:ring-blue-500 transition-all group"
+                    className="text-left bg-slate-50 rounded-lg overflow-hidden hover:ring-2 hover:ring-primary transition-all group"
                   >
                     <div className="aspect-video bg-slate-200 relative">
                       {t.thumbnail ? (
@@ -498,7 +498,7 @@ export default function PlaylistEditorPage() {
                           <HiOutlineTemplate className="w-5 h-5 text-slate-400" />
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors flex items-center justify-center">
+                      <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors flex items-center justify-center">
                         <HiOutlinePlus className="w-5 h-5 text-white opacity-0 group-hover:opacity-100" />
                       </div>
                     </div>
@@ -605,7 +605,7 @@ function PlaylistPreviewModal({
           {/* Progress bar */}
           <div className="w-full h-1 bg-slate-700 rounded-full mb-3">
             <div
-              className="h-full bg-blue-500 rounded-full transition-all duration-75"
+              className="h-full bg-orange-500 rounded-full transition-all duration-75"
               style={{ width: `${progress}%` }}
             />
           </div>

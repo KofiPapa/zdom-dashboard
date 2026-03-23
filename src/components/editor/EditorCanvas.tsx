@@ -23,7 +23,7 @@ const typeColors: Record<string, string> = {
 };
 
 const typeBorders: Record<string, string> = {
-  media: "border-blue-400",
+  media: "border-primary",
   text: "border-emerald-400",
   widget: "border-purple-400",
 };
@@ -186,7 +186,7 @@ export default function EditorCanvas({
             <div
               key={zone.id}
               className={`absolute cursor-move transition-shadow ${
-                isSelected ? `ring-2 ring-blue-500 ${typeBorders[zone.type]}` : `border border-dashed ${typeBorders[zone.type]}`
+                isSelected ? `ring-2 ring-primary ${typeBorders[zone.type]}` : `border border-dashed ${typeBorders[zone.type]}`
               }`}
               style={{
                 left: `${zone.x}%`,
@@ -246,7 +246,7 @@ export default function EditorCanvas({
                     return (
                       <div
                         key={handle}
-                        className={`absolute w-3 h-3 bg-blue-500 border border-white rounded-sm z-50 ${positions[handle]}`}
+                        className={`absolute w-3 h-3 bg-orange-500 border border-white rounded-sm z-50 ${positions[handle]}`}
                         onMouseDown={(e) => handleResizeStart(e, zone.id, handle)}
                       />
                     );

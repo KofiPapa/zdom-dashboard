@@ -29,7 +29,7 @@ const TIMELINE_DAY_MAP: Record<string, number> = {
 };
 
 const RULE_COLORS = [
-  "bg-blue-400",
+  "bg-primary",
   "bg-green-400",
   "bg-amber-400",
   "bg-purple-400",
@@ -192,7 +192,7 @@ export default function ScheduleEditorPage() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark disabled:opacity-50"
             >
               <HiOutlineSave className="w-4 h-4" />
               {saving ? "Saving..." : "Save"}
@@ -212,7 +212,7 @@ export default function ScheduleEditorPage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter schedule name"
-            className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           />
         </div>
 
@@ -228,7 +228,7 @@ export default function ScheduleEditorPage() {
                   key={screen.id}
                   className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
                     selectedScreenIds.includes(screen.id)
-                      ? "border-blue-500 bg-blue-50"
+                      ? "border-primary bg-orange-50"
                       : "border-slate-200 hover:bg-slate-50"
                   }`}
                 >
@@ -236,7 +236,7 @@ export default function ScheduleEditorPage() {
                     type="checkbox"
                     checked={selectedScreenIds.includes(screen.id)}
                     onChange={() => toggleScreen(screen.id)}
-                    className="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500"
+                    className="w-4 h-4 text-primary border-slate-300 rounded focus:ring-primary"
                   />
                   <div className="min-w-0">
                     <p className="text-sm font-medium text-slate-900 truncate">
@@ -263,7 +263,7 @@ export default function ScheduleEditorPage() {
           <select
             value={defaultPlaylistId}
             onChange={(e) => setDefaultPlaylistId(e.target.value)}
-            className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           >
             <option value="">-- No default playlist --</option>
             {playlists.map((p) => (
@@ -280,7 +280,7 @@ export default function ScheduleEditorPage() {
             <h2 className="text-sm font-medium text-slate-900">Schedule Rules</h2>
             <button
               onClick={addRule}
-              className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100"
+              className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-primary bg-orange-50 rounded-lg hover:bg-orange-100"
             >
               <HiOutlinePlus className="w-3.5 h-3.5" />
               Add Rule
@@ -397,13 +397,13 @@ export default function ScheduleEditorPage() {
                       <div className="flex gap-1">
                         <button
                           onClick={() => setPresetDays(rule.id, "weekdays")}
-                          className="px-2 py-0.5 text-[10px] text-blue-600 bg-blue-50 rounded hover:bg-blue-100"
+                          className="px-2 py-0.5 text-[10px] text-primary bg-orange-50 rounded hover:bg-orange-100"
                         >
                           Weekdays
                         </button>
                         <button
                           onClick={() => setPresetDays(rule.id, "weekend")}
-                          className="px-2 py-0.5 text-[10px] text-blue-600 bg-blue-50 rounded hover:bg-blue-100"
+                          className="px-2 py-0.5 text-[10px] text-primary bg-orange-50 rounded hover:bg-orange-100"
                         >
                           Weekend
                         </button>
@@ -416,7 +416,7 @@ export default function ScheduleEditorPage() {
                           onClick={() => toggleDay(rule.id, dayIndex)}
                           className={`flex-1 py-1.5 text-xs font-medium rounded transition-colors ${
                             rule.daysOfWeek.includes(dayIndex)
-                              ? "bg-blue-600 text-white"
+                              ? "bg-primary text-white"
                               : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                           }`}
                         >

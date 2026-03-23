@@ -78,7 +78,7 @@ export default function RightPanel({ zone, onUpdate, onRemove, onDuplicate, onRe
                   type="number"
                   value={Math.round(zone[key] * 10) / 10}
                   onChange={(e) => onUpdate(zone.id, { [key]: parseFloat(e.target.value) || 0 })}
-                  className="w-full px-2 py-1 text-xs border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-2 py-1 text-xs border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-primary"
                   min={0}
                   max={100}
                   step={0.5}
@@ -159,7 +159,7 @@ export default function RightPanel({ zone, onUpdate, onRemove, onDuplicate, onRe
               value={zone.content.text || ""}
               onChange={(e) => updateContent({ text: e.target.value })}
               rows={3}
-              className="w-full px-2 py-1 text-xs border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full px-2 py-1 text-xs border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-primary"
               placeholder="Enter text..."
             />
             <select
@@ -213,7 +213,7 @@ export default function RightPanel({ zone, onUpdate, onRemove, onDuplicate, onRe
                     onClick={() => updateTextStyle({ textAlign: align })}
                     className={`flex-1 py-1 text-xs rounded ${
                       zone.content.textStyle?.textAlign === align
-                        ? "bg-blue-100 text-blue-600"
+                        ? "bg-orange-100 text-primary"
                         : "bg-slate-50 text-slate-500"
                     }`}
                   >

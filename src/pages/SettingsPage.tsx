@@ -190,7 +190,7 @@ function OrganizationTab() {
                 value={orgName}
                 onChange={(e) => setOrgName(e.target.value)}
                 disabled={!canEdit}
-                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-50 disabled:text-slate-500"
+                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500"
               />
               <Badge variant={planInfo.variant}>{planInfo.label} Plan</Badge>
             </div>
@@ -205,7 +205,7 @@ function OrganizationTab() {
                 value={orientation}
                 onChange={(e) => setOrientation(e.target.value)}
                 disabled={!canEdit}
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-50"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-slate-50"
               >
                 {ORIENTATION_OPTIONS.map((opt) => (
                   <option key={opt.value} value={opt.value}>
@@ -225,7 +225,7 @@ function OrganizationTab() {
                 onChange={(e) => setTimezone(e.target.value)}
                 disabled={!canEdit}
                 placeholder="America/New_York"
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-50"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-slate-50"
               />
             </div>
           </div>
@@ -253,7 +253,7 @@ function OrganizationTab() {
                 value={primaryColor}
                 onChange={(e) => setPrimaryColor(e.target.value)}
                 disabled={!canEdit}
-                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-50"
+                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm font-mono focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-slate-50"
               />
             </div>
           </div>
@@ -274,7 +274,7 @@ function OrganizationTab() {
                 value={secondaryColor}
                 onChange={(e) => setSecondaryColor(e.target.value)}
                 disabled={!canEdit}
-                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-50"
+                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-sm font-mono focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-slate-50"
               />
             </div>
           </div>
@@ -285,7 +285,7 @@ function OrganizationTab() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50"
+              className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark disabled:opacity-50"
             >
               {saving ? "Saving..." : "Save Changes"}
             </button>
@@ -475,7 +475,7 @@ function TeamMembersTab() {
         <div className="flex justify-end">
           <button
             onClick={() => setShowInviteModal(true)}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark"
           >
             <HiOutlinePlus className="w-4 h-4" />
             Invite Member
@@ -518,7 +518,7 @@ function TeamMembersTab() {
                   <tr key={member.id} className="hover:bg-slate-50">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-semibold">
+                        <div className="w-9 h-9 rounded-full bg-orange-100 text-primary-dark flex items-center justify-center text-sm font-semibold">
                           {(member.displayName || member.email || "?")[0].toUpperCase()}
                         </div>
                         <div>
@@ -540,7 +540,7 @@ function TeamMembersTab() {
                             handleChangeRole(member.id, e.target.value as UserRole)
                           }
                           disabled={changingRoleId === member.id}
-                          className="px-2 py-1 border border-slate-300 rounded text-xs font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
+                          className="px-2 py-1 border border-slate-300 rounded text-xs font-medium focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
                         >
                           {ROLE_OPTIONS.map((opt) => (
                             <option key={opt.value} value={opt.value}>
@@ -629,7 +629,7 @@ function TeamMembersTab() {
                     value={inviteEmail}
                     onChange={(e) => setInviteEmail(e.target.value)}
                     placeholder="colleague@company.com"
-                    className="w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                     autoFocus
                   />
                 </div>
@@ -640,7 +640,7 @@ function TeamMembersTab() {
                 <select
                   value={inviteRole}
                   onChange={(e) => setInviteRole(e.target.value as UserRole)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 >
                   {ROLE_OPTIONS.map((opt) => (
                     <option key={opt.value} value={opt.value}>
@@ -666,7 +666,7 @@ function TeamMembersTab() {
               <button
                 onClick={handleInvite}
                 disabled={inviting || !inviteEmail.trim()}
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark disabled:opacity-50"
               >
                 {inviting ? "Sending..." : "Send Invite"}
               </button>
@@ -705,7 +705,7 @@ export default function SettingsPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 pb-3 text-sm font-medium border-b-2 transition-colors ${
                   isActive
-                    ? "border-blue-600 text-blue-600"
+                    ? "border-primary text-primary"
                     : "border-transparent text-slate-500 hover:text-slate-700"
                 }`}
               >

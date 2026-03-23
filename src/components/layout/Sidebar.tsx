@@ -45,7 +45,7 @@ export default function Sidebar() {
             className={({ isActive }) =>
               `flex items-center gap-3 px-6 py-2.5 text-sm font-medium transition-colors ${
                 isActive
-                  ? "bg-slate-800 text-white border-r-2 border-blue-500"
+                  ? "bg-primary/10 text-white border-r-2 border-primary"
                   : "text-slate-300 hover:bg-slate-800 hover:text-white"
               }`
             }
@@ -59,7 +59,7 @@ export default function Sidebar() {
       {/* User section */}
       <div className="p-4 border-t border-slate-700">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-sm font-medium">
+          <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-medium">
             {profile?.displayName?.charAt(0)?.toUpperCase() || "U"}
           </div>
           <div className="flex-1 min-w-0">
